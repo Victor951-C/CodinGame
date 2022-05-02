@@ -45,27 +45,27 @@ class Player {
 
         // game loop
         while (true) {
-            int myHealth = in.nextInt(); // Your base health
-            int myMana = in.nextInt(); // Ignore in the first league; Spend ten mana to cast a spell
+            int myHealth = in.nextInt(); 
+            int myMana = in.nextInt();
             int oppHealth = in.nextInt();
             int oppMana = in.nextInt();
-            int entityCount = in.nextInt(); // Amount of heros and monsters you can see
+            int entityCount = in.nextInt(); 
             
             List<Entity> myHeroes = new ArrayList<>(entityCount);
             List<Entity> oppHeroes = new ArrayList<>(entityCount);
             List<Entity> monsters = new ArrayList<>(entityCount);
             for (int i = 0; i < entityCount; i++) {
-                int id = in.nextInt();              // Unique identifier      
-                int type = in.nextInt();            // 0=monster, 1=your hero, 2=opponent hero        
-                int x = in.nextInt();               // Position of this entity       
+                int id = in.nextInt();                    
+                int type = in.nextInt();                   
+                int x = in.nextInt();                    
                 int y = in.nextInt();
-                int shieldLife = in.nextInt();      // Ignore for this league; Count down until shield spell fades      
-                int isControlled = in.nextInt();    // Ignore for this league; Equals 1 when this entity is under a control spell        
-                int health = in.nextInt();          // Remaining health of this monster      
-                int vx = in.nextInt();              // Trajectory of this monster      
+                int shieldLife = in.nextInt();          
+                int isControlled = in.nextInt();           
+                int health = in.nextInt();               
+                int vx = in.nextInt();                    
                 int vy = in.nextInt();
-                int nearBase = in.nextInt();        // 0=monster with no target yet, 1=monster targeting a base        
-                int threatFor = in.nextInt();       // Given this monster's trajectory, is it a threat to 1=your base, 2=your opponent's base, 0=neither       
+                int nearBase = in.nextInt();        
+                int threatFor = in.nextInt();             
                 
                 Entity entity = new Entity(
                     id, type, x, y, shieldLife, isControlled, health, vx, vy, nearBase, threatFor
